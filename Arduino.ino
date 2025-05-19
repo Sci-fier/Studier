@@ -22,6 +22,11 @@ String room = "0", skiptme;
 long sonar() {
   if (angl_now>=270+(angl_range/2) || angl_now<=270-(angl_range/2)) {
     snk = snk*(-1);
+    if angl_now>270+(angl_range/2){
+	    angl_now=270+angl_range/2;
+    } else if (angl_now<270-(angl_range/2)) {
+	    angl_now=270-(angl_range/2);
+	    }
   }
   angl_now = angl_now + angl_step * snk;
   
