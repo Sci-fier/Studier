@@ -12,7 +12,7 @@
 const long angl_range = 80;
 const int angl_step = 5;
 
-long buf_l, dist, angl_now=90-angl_range/2+angl_step, snk=1;
+long buf_l, dist, angl_now=270-angl_range/2+angl_step, snk=1;
 unsigned long timer;
 ServoSmooth servos[1];
 
@@ -20,7 +20,7 @@ String inData = "";
 String room = "0", skiptme;
 
 long sonar() {
-  if (angl_now==90+(angl_range/2) || angl_now==90-(angl_range/2)) {
+  if (angl_now>=270+(angl_range/2) || angl_now<=270-(angl_range/2)) {
     snk = snk*(-1);
   }
   angl_now = angl_now + angl_step * snk;
